@@ -2,9 +2,9 @@ module_name: UXRCE-DDS Client
 serial_config:
     - command: |
         if [ $SERIAL_DEV != ethernet ]; then
-            set UXRCE_DDS_ARGS "-t serial -d ${SERIAL_DEV} -b p:${BAUD_PARAM}"
+            set UXRCE_DDS_ARGS "-t serial -d ${SERIAL_DEV} -b p:${BAUD_PARAM} -n uuv00"
         else
-            set UXRCE_DDS_ARGS "-t udp"
+            set UXRCE_DDS_ARGS "-t udp -n uuv00"
         fi
         uxrce_dds_client start ${UXRCE_DDS_ARGS}
 
